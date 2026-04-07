@@ -4,6 +4,7 @@ import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { FileText, Save, Send, RefreshCw, Globe, Loader2, Settings } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import ConfluencePagePicker, { ConfluencePageSelection } from './ConfluencePagePicker';
 
 type DocType = 'security' | 'app' | 'webresource';
@@ -374,7 +375,7 @@ export default function EntityDocumentationEditor({
                     />
                 ) : (
                     <div className="w-full h-full p-8 overflow-y-auto prose prose-slate prose-sm max-w-none">
-                        <ReactMarkdown>{content}</ReactMarkdown>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
                     </div>
                 )}
             </div>

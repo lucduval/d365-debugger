@@ -8,7 +8,7 @@ import { ReactNode, useEffect } from "react";
 
 export default function AuthCheck({ children }: { children: ReactNode }) {
     const { user, isLoaded: isUserLoaded } = useUser();
-    // @ts-expect-error Convex type depth limit with expanded schema
+    // @ts-ignore Convex type depth limit with expanded schema
     const userData = useQuery(api.users.syncUser);
     const storeUser = useMutation(api.users.store);
 

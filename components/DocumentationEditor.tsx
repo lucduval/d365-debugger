@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery, useMutation, useAction } from "convex/react";
-import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
+// Use require to avoid TS2589 type depth limit with large Convex schema
+const { api } = require('@/convex/_generated/api') as { api: any };
 import { FileText, Save, Send, RefreshCw, Globe, Loader2, Check, Settings } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import ConfluencePagePicker, { ConfluencePageSelection } from './ConfluencePagePicker';
 
 interface DocumentationEditorProps {
@@ -312,7 +314,7 @@ export default function DocumentationEditor({ flowId, tenantId }: DocumentationE
                     />
                 ) : (
                     <div className="w-full h-full p-8 overflow-y-auto prose prose-slate prose-sm max-w-none">
-                        <ReactMarkdown>{content}</ReactMarkdown>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
                     </div>
                 )}
             </div>
