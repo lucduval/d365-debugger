@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useQuery, useMutation, useAction } from "convex/react";
-// Use require to avoid TS2589 type depth limit with large Convex schema
-const { api } = require('@/convex/_generated/api') as { api: any };
+// @ts-ignore TS2589 type depth limit with large Convex schema
+import { api } from '@/convex/_generated/api';
 import {
     GitBranch,
     RefreshCw,

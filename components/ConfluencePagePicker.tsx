@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useAction } from 'convex/react';
-// Use require to avoid TS2589 type depth limit with large Convex schema
-const { api } = require('@/convex/_generated/api') as { api: any };
+import { api } from '@/convex/_generated/api';
 import { Search, X, FileText, Loader2, ChevronDown, FolderOpen } from 'lucide-react';
 
 export interface ConfluencePageSelection {
@@ -30,6 +29,7 @@ export default function ConfluencePagePicker({
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
+    // @ts-ignore TS2589 type depth limit with large Convex schema
     const searchPages = useAction(api.actions.confluence.searchConfluencePages);
     const containerRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);

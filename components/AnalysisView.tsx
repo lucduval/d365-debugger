@@ -1,8 +1,8 @@
 
 import { useAction, useQuery } from "convex/react";
 import React, { useEffect, useState, useMemo } from 'react';
-// Use require to avoid TS2589 type depth limit with large Convex schema
-const { api } = require('@/convex/_generated/api') as { api: any };
+// @ts-ignore TS2589 type depth limit with large Convex schema
+import { api } from '@/convex/_generated/api';
 import {
     Activity,
     Database,

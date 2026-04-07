@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery, useMutation, useAction } from "convex/react";
 import { Id } from "@/convex/_generated/dataModel";
-// Use require to avoid TS2589 type depth limit with large Convex schema
-const { api } = require('@/convex/_generated/api') as { api: any };
+// @ts-ignore TS2589 type depth limit with large Convex schema
+import { api } from '@/convex/_generated/api';
 import { FileText, Save, Send, RefreshCw, Globe, Loader2, Check, Settings } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
