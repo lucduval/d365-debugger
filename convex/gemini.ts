@@ -82,7 +82,7 @@ export const analyzeFlow = action({
         // For now, let's send the structure.
         const prompt = `
 You are an expert Power Automate Logic Auditor.
-Analyze the following Power Automate flow definition (JSON) for logic errors, performance bottlenecks, and best practice violations.
+Analyse the following Power Automate flow definition (JSON) for logic errors, performance bottlenecks, and best practice violations.
 
 Flow Name: ${flowName}
 Description: ${description}
@@ -241,7 +241,7 @@ export const assessEnvironmentHealth = action({
             "claude-1.5-pro",
         ];
 
-        const prompt = `You are a Power Platform / Dynamics 365 environment health auditor. Analyze this environment data and produce a health assessment.
+        const prompt = `You are a Power Platform / Dynamics 365 environment health auditor. Analyse this environment data and produce a health assessment.
 
 ENVIRONMENT DATA:
 ${JSON.stringify(summary, null, 2)}

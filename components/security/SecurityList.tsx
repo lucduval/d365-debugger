@@ -123,6 +123,7 @@ export default function SecurityList({
     orgId,
     searchQuery = ''
 }: SecurityListProps) {
+    // @ts-ignore TS2589 type depth limit with large Convex schema
     const syncAllSecurity = useAction(api.actions.security.syncAllSecurity);
     const listBusinessUnits = useAction(api.actions.security.listBusinessUnits);
     const listSecurityRoles = useAction(api.actions.security.listSecurityRoles);
@@ -321,7 +322,7 @@ export default function SecurityList({
                                     <div className="flex gap-3 text-[11px] text-slate-500 font-medium ml-6">
                                         <span className="flex items-center gap-1 opacity-70">
                                             <KeyRound size={11} />
-                                            {role.isCustomizable !== false ? 'Customizable' : 'Locked'}
+                                            {role.isCustomizable !== false ? 'Customisable' : 'Locked'}
                                         </span>
                                     </div>
                                 </div>

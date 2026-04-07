@@ -190,7 +190,7 @@ export default function AppDetailView({ selectedItem, activeTenant, orgId }: App
                         <button onClick={handleRunAudit} disabled={isAuditing || !hasData}
                             className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 hover:bg-indigo-700 disabled:opacity-50 transition-all shadow-lg shadow-indigo-600/20 active:scale-95 text-sm">
                             {isAuditing ? <RefreshCw className="animate-spin" size={16} /> : <Zap size={16} fill="currentColor" />}
-                            {isAuditing ? 'Analyzing...' : (displayAudit ? 'Re-run Audit' : 'Run Landscape Audit')}
+                            {isAuditing ? 'Analysing...' : (displayAudit ? 'Re-run Audit' : 'Run Landscape Audit')}
                         </button>
                     </div>
                 </div>
@@ -230,7 +230,7 @@ export default function AppDetailView({ selectedItem, activeTenant, orgId }: App
                     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
                         <div className="p-4 border-b border-slate-100 flex items-center gap-2">
                             <Table size={16} className="text-indigo-600" />
-                            <span className="font-semibold text-slate-800">Entity Customization Summary</span>
+                            <span className="font-semibold text-slate-800">Entity Customisation Summary</span>
                             <span className="text-xs bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full font-medium">{entityBreakdown.length} entities</span>
                         </div>
                         <div className="max-h-80 overflow-y-auto">
@@ -341,7 +341,7 @@ export default function AppDetailView({ selectedItem, activeTenant, orgId }: App
                     <button onClick={handleAnalyzeApp} disabled={isAnalyzingApp}
                         className="bg-indigo-600 text-white px-4 py-2 rounded-xl font-bold flex items-center gap-2 hover:bg-indigo-700 disabled:opacity-50 transition-all shadow-lg shadow-indigo-600/20 active:scale-95 text-sm shrink-0">
                         {isAnalyzingApp ? <RefreshCw className="animate-spin" size={14} /> : <Zap size={14} fill="currentColor" />}
-                        {isAnalyzingApp ? 'Analyzing...' : (displayAppAudit ? 'Re-analyze' : 'Analyze App')}
+                        {isAnalyzingApp ? 'Analysing...' : (displayAppAudit ? 'Re-analyse' : 'Analyse App')}
                     </button>
                 </div>
             </div>

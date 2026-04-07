@@ -233,7 +233,7 @@ export default function SecurityAnalysisView({
                                 className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-indigo-700 disabled:opacity-50 transition-all shadow-lg shadow-indigo-600/20 active:scale-95"
                             >
                                 {isAnalyzing ? <RefreshCw className="animate-spin" size={18} /> : <Zap size={18} fill="currentColor" />}
-                                {isAnalyzing ? 'Analyzing...' : (displayResult ? 'Re-run Audit' : 'Run Security Audit')}
+                                {isAnalyzing ? 'Analysing...' : (displayResult ? 'Re-run Audit' : 'Run Security Audit')}
                             </button>
                         )}
                     </div>
@@ -530,7 +530,7 @@ export default function SecurityAnalysisView({
                                 )}
                             </div>
                             <div>
-                                <p className="text-[10px] uppercase text-slate-400 font-semibold tracking-wider mb-1">Customizable</p>
+                                <p className="text-[10px] uppercase text-slate-400 font-semibold tracking-wider mb-1">Customisable</p>
                                 <span className={`text-sm font-medium px-2 py-1 rounded ${selectedItem.isCustomizable !== false
                                     ? 'bg-emerald-50 text-emerald-600'
                                     : 'bg-slate-100 text-slate-500'

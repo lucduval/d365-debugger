@@ -41,7 +41,7 @@ export const analyzeWebResource = action({
         const prompt = `
 You are an expert Microsoft Dynamics 365 / Power Platform Web Resource Code Auditor.
 
-Analyze the following ${args.resourceType} web resource from a Dynamics 365 environment.
+Analyse the following ${args.resourceType} web resource from a Dynamics 365 environment.
 
 **Resource Name:** ${args.resourceName}
 **Resource Type:** ${args.resourceType}
@@ -51,7 +51,7 @@ Analyze the following ${args.resourceType} web resource from a Dynamics 365 envi
 ${codeSnippet}
 \`\`\`
 
-Analyze this code for the following categories:
+Analyse this code for the following categories:
 
 ${args.resourceType === "JScript" ? `
 1. **Deprecated API Usage** - Look for deprecated Xrm SDK methods: Xrm.Page (should use formContext), Xrm.Utility.alertDialog (should use Xrm.Navigation), GlobalContext usage patterns, deprecated execution context methods
@@ -59,7 +59,7 @@ ${args.resourceType === "JScript" ? `
 3. **Security Vulnerabilities** - eval() usage, innerHTML without sanitization, hardcoded credentials/tokens, XSS risk patterns, unsafe postMessage handling
 4. **Best Practice Violations** - Hardcoded GUIDs or environment URLs, jQuery usage (should use native APIs), global namespace pollution, missing error handling/try-catch, no null checks on form context attributes, direct window.open instead of Xrm.Navigation
 5. **Maintainability** - No JSDoc comments, deeply nested callbacks (callback hell), magic numbers/strings, overly complex functions (cyclomatic complexity), dead code
-6. **Supportability** - Unsupported customizations that may break during updates, use of internal/undocumented APIs, direct DOM access to form elements (fragile selectors)
+6. **Supportability** - Unsupported customisations that may break during updates, use of internal/undocumented APIs, direct DOM access to form elements (fragile selectors)
 ` : args.resourceType === "HTML" ? `
 1. **Security Issues** - Inline scripts without CSP consideration, external resource loading, form action to external URLs, missing input sanitization
 2. **Accessibility** - Missing ARIA attributes, missing alt text, improper heading hierarchy, missing lang attribute

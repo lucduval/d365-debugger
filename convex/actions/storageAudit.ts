@@ -73,7 +73,7 @@ export const analyzeStorageOverview = action({
         const prompt = `
 You are an expert Microsoft Dynamics 365 / Power Platform Storage Auditor.
 
-Analyze the following environment storage data and provide actionable recommendations for optimizing capacity usage.
+Analyse the following environment storage data and provide actionable recommendations for optimising capacity usage.
 
 ## Environment Storage Overview (${envSummary.length} environments)
 - Total Database: ${totalDbUsed}MB used of ${totalDbCapacity}MB capacity (${totalDbCapacity > 0 ? Math.round(totalDbUsed / totalDbCapacity * 100) : 0}%)
@@ -83,11 +83,11 @@ Analyze the following environment storage data and provide actionable recommenda
 ## Per-Environment Details
 ${JSON.stringify(envSummary, null, 2)}
 
-Analyze this storage data for:
-1. **Capacity Utilization** - Are any environments approaching capacity limits? Are there environments with wasted capacity?
-2. **Database Optimization** - Large tables that could benefit from archival or cleanup. Audit log tables that should be pruned. Tables with excessive record counts.
+Analyse this storage data for:
+1. **Capacity Utilisation** - Are any environments approaching capacity limits? Are there environments with wasted capacity?
+2. **Database Optimisation** - Large tables that could benefit from archival or cleanup. Audit log tables that should be pruned. Tables with excessive record counts.
 3. **File Storage** - Notes/attachments tables consuming excessive file storage. Opportunities to move files to external storage.
-4. **Log Optimization** - Log capacity usage patterns and cleanup recommendations.
+4. **Log Optimisation** - Log capacity usage patterns and cleanup recommendations.
 5. **General Recommendations** - Environment consolidation opportunities, capacity reallocation suggestions, bulk delete candidates.
 
 Provide the output in the following JSON format ONLY (no markdown code blocks):

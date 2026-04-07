@@ -176,7 +176,7 @@ export default function StorageDashboard({ activeTenant, orgId, onOpenSettings }
                             ) : (
                                 <Sparkles size={16} className="text-amber-500" />
                             )}
-                            {auditLoading ? 'Analyzing...' : 'AI Analysis'}
+                            {auditLoading ? 'Analysing...' : 'AI Analysis'}
                         </button>
                     )}
                     <button
@@ -575,7 +575,7 @@ function StorageRecommendations({ audit, loading, onAnalyze, hasData }: { audit:
                         className="bg-amber-500 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-amber-600 transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2 mx-auto"
                     >
                         <Sparkles size={18} />
-                        Analyze Storage
+                        Analyse Storage
                     </button>
                 )}
             </div>
@@ -586,7 +586,7 @@ function StorageRecommendations({ audit, loading, onAnalyze, hasData }: { audit:
         return (
             <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center">
                 <Loader2 size={40} className="mx-auto text-amber-500 mb-3 animate-spin" />
-                <h3 className="font-semibold text-slate-600 mb-1">Analyzing Storage...</h3>
+                <h3 className="font-semibold text-slate-600 mb-1">Analysing Storage...</h3>
                 <p className="text-sm text-slate-400">
                     Claude is reviewing your environment storage data and generating recommendations.
                 </p>

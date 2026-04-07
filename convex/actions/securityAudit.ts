@@ -63,7 +63,7 @@ export const analyzeSecurityOverview = action({
         const prompt = `
 You are an expert Microsoft Dynamics 365 / Power Platform Security Auditor.
 
-Analyze the following security configuration for a Dynamics 365 environment and provide a comprehensive audit.
+Analyse the following security configuration for a Dynamics 365 environment and provide a comprehensive audit.
 
 ## Business Units (${buSummary.length} total)
 ${JSON.stringify(buSummary, null, 2)}
@@ -74,8 +74,8 @@ ${JSON.stringify(roleSummary, null, 2)}
 ## Teams (${teamSummary.length} total)
 ${JSON.stringify(teamSummary, null, 2)}
 
-Analyze this security configuration for:
-1. **Business Unit Structure** - Is the hierarchy well-organized? Are there disabled BUs that should be cleaned up? Is the structure too flat or too deep?
+Analyse this security configuration for:
+1. **Business Unit Structure** - Is the hierarchy well-organised? Are there disabled BUs that should be cleaned up? Is the structure too flat or too deep?
 2. **Security Role Hygiene** - Are there duplicate or very similarly named roles? Are custom roles properly managed? Are there too many roles (role sprawl)? Are roles assigned at appropriate BU levels?
 3. **Team Configuration** - Are security roles assigned to teams (best practice) rather than directly to users? Are there default teams without roles? Are AAD groups being leveraged? Are there Access teams being used effectively?
 4. **General Security Posture** - Overall security maturity assessment, common pitfalls, and recommendations.

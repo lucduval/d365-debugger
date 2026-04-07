@@ -116,13 +116,13 @@ export const analyzeAppLandscape = action({
         const prompt = `
 You are an expert Microsoft Dynamics 365 / Power Platform App Landscape Auditor.
 
-Analyze the following model-driven app landscape for a Dynamics 365 environment.
+Analyse the following model-driven app landscape for a Dynamics 365 environment.
 
 ## Model-Driven Apps (${appSummary.length} total)
 ${JSON.stringify(appSummary, null, 2)}
 
-## Entity Customization Summary (${entitySummary.length} entities with custom forms/views)
-Top entities by customization:
+## Entity Customisation Summary (${entitySummary.length} entities with custom forms/views)
+Top entities by customisation:
 ${JSON.stringify(entitySummary.slice(0, 30), null, 2)}
 
 ## Aggregate Stats
@@ -131,19 +131,19 @@ ${JSON.stringify(entitySummary.slice(0, 30), null, 2)}
 - Entities with >3 main forms: ${entitySummary.filter(e => e.mainForms > 3).map(e => e.entity).join(', ') || 'None'}
 - Entities with >10 views: ${entitySummary.filter(e => e.views > 10).map(e => e.entity).join(', ') || 'None'}
 
-Analyze for:
+Analyse for:
 1. **App Sprawl** - Too many apps? Overlapping apps that serve similar purposes? Apps that could be consolidated?
 2. **Form Complexity** - Entities with too many main forms (causes confusion), entities with missing Quick Create forms, form sprawl per entity
 3. **View Sprawl** - Entities with excessive custom views, entities missing default views, duplicate/similar view names
-4. **Architecture** - Are Unified Interface apps used (best practice)? Any legacy web client apps? Overall app organization quality
-5. **Entity Coverage** - Are key entities properly covered with forms and views? Any orphaned customizations?
+4. **Architecture** - Are Unified Interface apps used (best practice)? Any legacy web client apps? Overall app organisation quality
+5. **Entity Coverage** - Are key entities properly covered with forms and views? Any orphaned customisations?
 
 Provide the output in the following JSON format ONLY (no markdown code blocks):
 {
   "summary": "A one-line app landscape health summary.",
   "overallScore": 80,
   "categories": {
-    "appOrganization": { "score": 85, "label": "App Organization" },
+    "appOrganization": { "score": 85, "label": "App Organisation" },
     "formHealth": { "score": 75, "label": "Form Health" },
     "viewHealth": { "score": 80, "label": "View Health" },
     "architecture": { "score": 85, "label": "Architecture" }
@@ -151,7 +151,7 @@ Provide the output in the following JSON format ONLY (no markdown code blocks):
   "findings": [
     {
       "type": "error" | "warning" | "info",
-      "category": "App Organization" | "Forms" | "Views" | "Architecture",
+      "category": "App Organisation" | "Forms" | "Views" | "Architecture",
       "title": "Short title",
       "description": "Detailed explanation.",
       "suggestion": "Actionable fix."

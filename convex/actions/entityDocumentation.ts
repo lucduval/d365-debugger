@@ -157,7 +157,7 @@ Instructions:
 
 2.  **Executive Summary**: 2-3 sentences summarizing the overall security posture.
 
-3.  **Organization Structure**:
+3.  **Organisation Structure**:
     *   Describe the Business Unit hierarchy using a **Mermaid.js** diagram (wrap in \`\`\`mermaid code block).
     *   Note any disabled BUs.
 
@@ -270,9 +270,9 @@ Environment Context:
 - Total Apps: ${allApps.length}
 - Total Custom Forms: ${allForms.length}
 - Total Custom Views: ${allViews.length}
-- Entities with Customizations: ${Object.keys(entityMap).length}
+- Entities with Customisations: ${Object.keys(entityMap).length}
 
-Entity Customization Breakdown (top 15):
+Entity Customisation Breakdown (top 15):
 ${Object.entries(entityMap)
     .sort(([, a], [, b]) => (b.forms.length + b.views.length) - (a.forms.length + a.views.length))
     .slice(0, 15)
@@ -294,7 +294,7 @@ Instructions:
 
 4.  **Entity & Form Summary**: A table listing the key entities, their forms (by type: Main, Quick Create, Quick View), and view counts.
 
-5.  **Customization Analysis**: Discuss the customization footprint — managed vs custom components, form complexity, view proliferation.
+5.  **Customisation Analysis**: Discuss the customisation footprint — managed vs custom components, form complexity, view proliferation.
 
 6.  **Recommendations**: 3-5 actionable items using callout syntax:
     *   \`> [!WARNING] Title\` for issues
