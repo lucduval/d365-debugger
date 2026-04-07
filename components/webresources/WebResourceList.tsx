@@ -96,7 +96,10 @@ export default function WebResourceList({
     const filteredResources = useMemo(() => {
         if (!cachedResources) return [];
 
-        let filtered = cachedResources;
+        const IGNORED_PREFIXES = ['mspp_bootstrap_glyphicons', 'cat'];
+        let filtered = cachedResources.filter((r: any) =>
+            !IGNORED_PREFIXES.some(prefix => r.name.toLowerCase().startsWith(prefix))
+        );
 
         // Apply type filter
         if (filterType === 'code') {
